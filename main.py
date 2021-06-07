@@ -64,27 +64,31 @@ class Frame3 (DataManager, noname.MyFrame3):
         Tgl = self.m_textCtrl111.GetValue()
         NIK = self.m_textCtrl6.GetValue()
         Notelp = self.m_textCtrl7.GetValue()
-        Agama = self.m_choice2.GetSelection()
-        Jenis = self.m_choice3.GetSelection()
+        Agama = self.m_choice2.GetString(self.m_choice2.GetSelection())
+        Jenis = self.m_choice3.GetString(self.m_choice3.GetSelection())
         Alamat = self.m_textCtrl8.GetValue()
         Ayah = self.m_textCtrl9.GetValue()
-        PekerjaanAyah = self.m_choice4.GetSelection()
-        PenghasilanAyah = self.m_choice5.GetSelection()
+        PekerjaanAyah = self.m_choice4.GetString(self.m_choice4.GetSelection())
+        PenghasilanAyah = self.m_choice5.GetString(self.m_choice5.GetSelection())
         Ibu = self.m_textCtrl11.GetValue()
-        PekerjaanIbu = self.m_choice6.GetSelection()
-        PenghasilanIbu = self.m_choice7.GetSelection()
+        PekerjaanIbu = self.m_choice6.GetString(self.m_choice6.GetSelection())
+        PenghasilanIbu = self.m_choice7.GetString(self.m_choice7.GetSelection())
         NoTelpOrtu = self.m_textCtrl12.GetValue()
         AlamatOrtu = self.m_textCtrl13.GetValue()
 
+
         if Nama != "" and Tgl != "" and NIK != "" and Notelp != "" and Agama != "" and Jenis != "" and Alamat != "" and Ayah != "" and PekerjaanAyah != "" and PenghasilanAyah != "" and Ibu != "" and PekerjaanIbu != "" and PenghasilanIbu != "" and NoTelpOrtu != "" and AlamatOrtu != "":
-            self.query = 'INSERT INTO siswa (`Nama`, `Tgl`, `NIK`, `Notelp`, `Agama`, `Jenis`, `Alamat`, `Ayah`, `PekerjaanAyah`, `PenghasilanAyah`, `Ibu`, `PekerjaanIbu`, `PenghasilanIbu`, `NoTelpOrtu`, `AlamatOrtu`) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)'
+            print(Nama)
+            self.query = "INSERT INTO siswa (Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
             self.value = (Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu)
             self.DM.cursor.execute(self.query, self.value)
+            self.DM.conn.commit()
             wx.MessageBox('Data Berhasil', 'Selamat data berhasil disimpan', wx.OK | wx.ICON_INFORMATION)
             event = Frame1(None)
             event.Show()
             self.Destroy()
             self.DM.conn.close()
+
         else:
             wx.MessageBox('Data tidak boleh kosong', 'Terjadi Kesalahan')
 
