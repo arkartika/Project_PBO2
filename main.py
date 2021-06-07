@@ -26,6 +26,8 @@ class Frame1 (DataManager, noname.MyFrame1):
         event = Dialog1(None)
         event.Show()
 
+
+    
 run = wx.App()
 frame = Frame1(parent=None)
 frame.Show()
