@@ -41,12 +41,12 @@ class Dialog1 (DataManager, noname.MyDialog1):
         hasil1 = self.DM.Jalankan(self.query1, returnData = True)
 
         if hasil is not None and len(hasil) > 0:
-            event = noname.MyFrame3(None)
+            event = Frame3(None)
             event.Show()
             self.Destroy()
             self.DM.conn.close()
         elif hasil1 is not None and len(hasil1) > 0:
-            event = noname.MyFrame4(None)
+            event = Frame4(None)
             event.Show()
             self.Destroy()
             self.DM.conn.close()
