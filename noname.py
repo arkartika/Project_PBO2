@@ -339,7 +339,7 @@ class MyFrame3 ( wx.Frame ):
 class MyDialog6 ( wx.Dialog ):
 
 	def __init__( self, parent ):
-		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Notifikasi", pos = wx.DefaultPosition, size = wx.Size( 310,116 ), style = wx.DEFAULT_DIALOG_STYLE )
+		wx.Dialog.__init__ ( self, parent, id = wx.ID_ANY, title = u"Notifikasi", pos = wx.DefaultPosition, size = wx.Size( 330,144 ), style = wx.DEFAULT_DIALOG_STYLE )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INACTIVECAPTION ) )
@@ -479,165 +479,171 @@ class MyFrame4 ( wx.Frame ):
 class MyFrame5 ( wx.Frame ):
 
 	def __init__( self, parent ):
-		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 735,505 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
+		wx.Frame.__init__ ( self, parent, id = wx.ID_ANY, title = wx.EmptyString, pos = wx.DefaultPosition, size = wx.Size( 547,638 ), style = wx.DEFAULT_FRAME_STYLE|wx.TAB_TRAVERSAL )
 
 		self.SetSizeHints( wx.DefaultSize, wx.DefaultSize )
 		self.SetBackgroundColour( wx.SystemSettings.GetColour( wx.SYS_COLOUR_INACTIVECAPTION ) )
 
-		gSizer2 = wx.GridSizer( 0, 2, 0, 0 )
+		gSizer10 = wx.GridSizer( 0, 2, 0, 0 )
 
-		self.m_staticText8 = wx.StaticText( self, wx.ID_ANY, u"Nama Siswa", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText8.Wrap( -1 )
+		self.m_staticText84 = wx.StaticText( self, wx.ID_ANY, u"USER :", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText84.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText8, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText84, 0, wx.ALL|wx.ALIGN_RIGHT, 5 )
 
-		self.m_staticText77 = wx.StaticText( self, wx.ID_ANY, u"Rio", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText77.Wrap( -1 )
+		self.m_staticText85 = wx.StaticText( self, wx.ID_ANY, u"MyLabel", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText85.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText77, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText85, 0, wx.ALL, 5 )
 
-		self.m_staticText11 = wx.StaticText( self, wx.ID_ANY, u"NIK", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText11.Wrap( -1 )
+		self.m_staticText86 = wx.StaticText( self, wx.ID_ANY, u"Nama Siswa", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText86.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText11, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText86, 0, wx.ALL, 5 )
 
-		self.m_textCtrl6 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl6, 0, wx.ALL, 5 )
+		self.m_textCtrl37 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl37, 0, wx.ALL, 5 )
 
-		self.m_staticText12 = wx.StaticText( self, wx.ID_ANY, u"No. Telpon", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText12.Wrap( -1 )
+		self.m_staticText87 = wx.StaticText( self, wx.ID_ANY, u"Tanggal Lahir", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText87.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText12, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText87, 0, wx.ALL, 5 )
 
-		self.m_textCtrl7 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl7, 0, wx.ALL, 5 )
+		self.m_textCtrl38 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl38, 0, wx.ALL, 5 )
 
-		self.m_staticText13 = wx.StaticText( self, wx.ID_ANY, u"Agama", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText13.Wrap( -1 )
+		self.m_staticText88 = wx.StaticText( self, wx.ID_ANY, u"NIK", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText88.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText13, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText88, 0, wx.ALL, 5 )
 
-		m_choice2Choices = [ u"ISLAM", u"BUDHA", u"KONGHUCU", u"HINDU", u"KRISTEN", u"KATOLIK" ]
-		self.m_choice2 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice2Choices, 0 )
-		self.m_choice2.SetSelection( 3 )
-		gSizer2.Add( self.m_choice2, 0, wx.ALL, 5 )
+		self.m_textCtrl39 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl39, 0, wx.ALL, 5 )
 
-		self.m_staticText14 = wx.StaticText( self, wx.ID_ANY, u"Jenis Kelamin", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText14.Wrap( -1 )
+		self.m_staticText89 = wx.StaticText( self, wx.ID_ANY, u"No. Telpon", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText89.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText14, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText89, 0, wx.ALL, 5 )
 
-		m_choice3Choices = [ u"PRIA", u"WANITA" ]
-		self.m_choice3 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice3Choices, 0 )
-		self.m_choice3.SetSelection( 1 )
-		gSizer2.Add( self.m_choice3, 0, wx.ALL, 5 )
+		self.m_textCtrl40 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl40, 0, wx.ALL, 5 )
 
-		self.m_staticText15 = wx.StaticText( self, wx.ID_ANY, u"Alamat", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText15.Wrap( -1 )
+		self.m_staticText90 = wx.StaticText( self, wx.ID_ANY, u"Agama", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText90.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText15, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText90, 0, wx.ALL, 5 )
 
-		self.m_textCtrl8 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 250,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl8, 0, wx.ALL, 5 )
+		m_choice25Choices = [ u"ISLAM", u"BUDHA", u"KONGHUCU", u"HINDU", u"KRISTEN", u"KATOLIK" ]
+		self.m_choice25 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice25Choices, 0 )
+		self.m_choice25.SetSelection( 3 )
+		gSizer10.Add( self.m_choice25, 0, wx.ALL, 5 )
 
-		self.m_staticText18 = wx.StaticText( self, wx.ID_ANY, u"Nama Ayah Kandung", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText18.Wrap( -1 )
+		self.m_staticText91 = wx.StaticText( self, wx.ID_ANY, u"Jenis Kelamin", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText91.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText18, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText91, 0, wx.ALL, 5 )
 
-		self.m_textCtrl9 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl9, 0, wx.ALL, 5 )
+		m_choice26Choices = [ u"PRIA", u"WANITA" ]
+		self.m_choice26 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice26Choices, 0 )
+		self.m_choice26.SetSelection( 1 )
+		gSizer10.Add( self.m_choice26, 0, wx.ALL, 5 )
 
-		self.m_staticText23 = wx.StaticText( self, wx.ID_ANY, u"Pekerjaan Ayah", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText23.Wrap( -1 )
+		self.m_staticText92 = wx.StaticText( self, wx.ID_ANY, u"Alamat", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText92.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText23, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText92, 0, wx.ALL, 5 )
 
-		m_choice4Choices = [ u"PNS", u"SWASTA", u"LAINNYA" ]
-		self.m_choice4 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice4Choices, 0 )
-		self.m_choice4.SetSelection( 2 )
-		gSizer2.Add( self.m_choice4, 0, wx.ALL, 5 )
+		self.m_textCtrl41 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 250,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl41, 0, wx.ALL, 5 )
 
-		self.m_staticText24 = wx.StaticText( self, wx.ID_ANY, u"Penghasilan Ayah", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText24.Wrap( -1 )
+		self.m_staticText93 = wx.StaticText( self, wx.ID_ANY, u"Nama Ayah Kandung", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText93.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText24, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText93, 0, wx.ALL, 5 )
 
-		m_choice5Choices = [ u"<1.000.000", u"1.500.000 - 3.000.000", u"> 3.000.000" ]
-		self.m_choice5 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice5Choices, 0 )
-		self.m_choice5.SetSelection( 2 )
-		gSizer2.Add( self.m_choice5, 0, wx.ALL, 5 )
+		self.m_textCtrl42 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl42, 0, wx.ALL, 5 )
 
-		self.m_staticText20 = wx.StaticText( self, wx.ID_ANY, u"Nama Ibu Kandung", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText20.Wrap( -1 )
+		self.m_staticText94 = wx.StaticText( self, wx.ID_ANY, u"Pekerjaan Ayah", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText94.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText20, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText94, 0, wx.ALL, 5 )
 
-		self.m_textCtrl11 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl11, 0, wx.ALL, 5 )
+		m_choice27Choices = [ u"PNS", u"SWASTA", u"LAINNYA" ]
+		self.m_choice27 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice27Choices, 0 )
+		self.m_choice27.SetSelection( 0 )
+		gSizer10.Add( self.m_choice27, 0, wx.ALL, 5 )
 
-		self.m_staticText25 = wx.StaticText( self, wx.ID_ANY, u"Pekerjaan Ibu", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText25.Wrap( -1 )
+		self.m_staticText95 = wx.StaticText( self, wx.ID_ANY, u"Penghasilan Ayah", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText95.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText25, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText95, 0, wx.ALL, 5 )
 
-		m_choice6Choices = [ u"PNS", u"SWASTA", u"LAINNYA", wx.EmptyString ]
-		self.m_choice6 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice6Choices, 0 )
-		self.m_choice6.SetSelection( 1 )
-		gSizer2.Add( self.m_choice6, 0, wx.ALL, 5 )
+		m_choice28Choices = [ u"<1.000.000", u"1.500.000 - 3.000.000", u"> 3.000.000" ]
+		self.m_choice28 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice28Choices, 0 )
+		self.m_choice28.SetSelection( 0 )
+		gSizer10.Add( self.m_choice28, 0, wx.ALL, 5 )
 
-		self.m_staticText26 = wx.StaticText( self, wx.ID_ANY, u"penghasilan Ibu", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText26.Wrap( -1 )
+		self.m_staticText96 = wx.StaticText( self, wx.ID_ANY, u"Nama Ibu Kandung", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText96.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText26, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText96, 0, wx.ALL, 5 )
 
-		m_choice7Choices = [ u"< 1.000.000", u"1.500.000 - 3.000.000", u"> 3.000.000" ]
-		self.m_choice7 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice7Choices, 0 )
-		self.m_choice7.SetSelection( 2 )
-		gSizer2.Add( self.m_choice7, 0, wx.ALL, 5 )
+		self.m_textCtrl43 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl43, 0, wx.ALL, 5 )
 
-		self.m_staticText21 = wx.StaticText( self, wx.ID_ANY, u"No. Telpon Orang Tua", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText21.Wrap( -1 )
+		self.m_staticText97 = wx.StaticText( self, wx.ID_ANY, u"Pekerjaan Ibu", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText97.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText21, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText97, 0, wx.ALL, 5 )
 
-		self.m_textCtrl12 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl12, 0, wx.ALL, 5 )
+		m_choice29Choices = [ u"PNS", u"SWASTA", u"LAINNYA", wx.EmptyString ]
+		self.m_choice29 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice29Choices, 0 )
+		self.m_choice29.SetSelection( 0 )
+		gSizer10.Add( self.m_choice29, 0, wx.ALL, 5 )
 
-		self.m_staticText22 = wx.StaticText( self, wx.ID_ANY, u"Alamat Orangtua", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_staticText22.Wrap( -1 )
+		self.m_staticText98 = wx.StaticText( self, wx.ID_ANY, u"Penghasilan Ibu", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText98.Wrap( -1 )
 
-		gSizer2.Add( self.m_staticText22, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText98, 0, wx.ALL, 5 )
 
-		self.m_textCtrl13 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 250,-1 ), 0 )
-		gSizer2.Add( self.m_textCtrl13, 0, wx.ALL, 5 )
+		m_choice30Choices = [ u"<1.000.000", u"1.500.000 - 3.000.000", u"> 3.000.000" ]
+		self.m_choice30 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.Size( 150,-1 ), m_choice30Choices, 0 )
+		self.m_choice30.SetSelection( 0 )
+		gSizer10.Add( self.m_choice30, 0, wx.ALL, 5 )
 
-		self.m_button5 = wx.Button( self, wx.ID_ANY, u"Simpan Perubahan", wx.DefaultPosition, wx.DefaultSize, 0 )
-		self.m_button5.SetBackgroundColour( wx.Colour( 0, 255, 0 ) )
+		self.m_staticText99 = wx.StaticText( self, wx.ID_ANY, u"No.Telpon Orang Tua", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText99.Wrap( -1 )
 
-		gSizer2.Add( self.m_button5, 0, wx.ALL, 5 )
+		gSizer10.Add( self.m_staticText99, 0, wx.ALL, 5 )
+
+		self.m_textCtrl44 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 150,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl44, 0, wx.ALL, 5 )
+
+		self.m_staticText100 = wx.StaticText( self, wx.ID_ANY, u"Alamat", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText100.Wrap( -1 )
+
+		gSizer10.Add( self.m_staticText100, 0, wx.ALL, 5 )
+
+		self.m_textCtrl45 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.Size( 250,-1 ), 0 )
+		gSizer10.Add( self.m_textCtrl45, 0, wx.ALL, 5 )
+
+		self.m_button10 = wx.Button( self, wx.ID_ANY, u"Simpan Perubahan", wx.DefaultPosition, wx.DefaultSize, 0 )
+		gSizer10.Add( self.m_button10, 0, wx.ALL, 5 )
 
 
-		gSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+		gSizer10.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 
-		gSizer2.Add( ( 0, 0), 1, wx.EXPAND, 5 )
+		gSizer10.Add( ( 0, 0), 1, wx.EXPAND, 5 )
 
 
-		self.SetSizer( gSizer2 )
+		self.SetSizer( gSizer10 )
 		self.Layout()
 
 		self.Centre( wx.BOTH )
 
-		# Connect Events
-		self.m_button5.Bind( wx.EVT_BUTTON, self.Simpan Perubahan )
-
 	def __del__( self ):
 		pass
-
-
-	# Virtual event handlers, overide them in your derived class
-	def Simpan Perubahan( self, event ):
-		event.Skip()
 
 
