@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jun 2021 pada 07.38
+-- Waktu pembuatan: 08 Jun 2021 pada 04.38
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.0
 
@@ -57,7 +57,8 @@ CREATE TABLE `akunsiswa` (
 --
 
 INSERT INTO `akunsiswa` (`id`, `username`, `password`) VALUES
-(1, 'Siswa', 'Siswa');
+(1, 'Siswa', 'Siswa'),
+(2, 'Rio', 'Rio123');
 
 -- --------------------------------------------------------
 
@@ -127,13 +128,13 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT untuk tabel `akunsiswa`
 --
 ALTER TABLE `akunsiswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
