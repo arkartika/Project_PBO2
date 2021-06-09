@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 08 Jun 2021 pada 04.38
+-- Waktu pembuatan: 09 Jun 2021 pada 14.53
 -- Versi server: 10.4.17-MariaDB
 -- Versi PHP: 8.0.0
 
@@ -68,6 +68,8 @@ INSERT INTO `akunsiswa` (`id`, `username`, `password`) VALUES
 
 CREATE TABLE `siswa` (
   `id` int(11) NOT NULL,
+  `Username` varchar(50) NOT NULL,
+  `Password` varchar(50) NOT NULL,
   `Nama` varchar(50) NOT NULL,
   `Tgl` varchar(255) NOT NULL,
   `NIK` varchar(50) NOT NULL,
@@ -89,8 +91,9 @@ CREATE TABLE `siswa` (
 -- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`id`, `Nama`, `Tgl`, `NIK`, `Notelp`, `Agama`, `Jenis`, `Alamat`, `Ayah`, `PekerjaanAyah`, `PenghasilanAyah`, `Ibu`, `PekerjaanIbu`, `PenghasilanIbu`, `NoTelpOrtu`, `AlamatOrtu`) VALUES
-(19, 'Rio', '25-1-2000', '123456789', '0987654321', 'Islam', 'Pria', 'Jl.Raya 1', 'Usep', 'PNS', '1.000.000', 'Lia', 'PNS', '1.000.000', '0987654321', 'Jl.Raya 1');
+INSERT INTO `siswa` (`id`, `Username`, `Password`, `Nama`, `Tgl`, `NIK`, `Notelp`, `Agama`, `Jenis`, `Alamat`, `Ayah`, `PekerjaanAyah`, `PenghasilanAyah`, `Ibu`, `PekerjaanIbu`, `PenghasilanIbu`, `NoTelpOrtu`, `AlamatOrtu`) VALUES
+(1, 'rio123', 'rio12', 'Rio', '25-1-2000', '123456789', '0987654321', 'Islam', 'Pria', 'Jl.Raya 1', 'Usep', 'PNS', '1.000.000', 'Lia', 'PNS', '1.000.000', '0987654321', 'Jl.Raya 1'),
+(23, 'Sania00', 'San00', 'cehdc', 'nnncnd', 'odcodc', 'kncoodweocb', 'BUDHA', 'PRIA', 'cnopdhccdhd', 'pjcodoc', 'SWASTA', '> 3.000.000', 'fjowjhfer', 'PNS', '1.500.000 - 3.000.000', 'fjog0wh', 'oehfpowe');
 
 --
 -- Indexes for dumped tables
@@ -134,7 +137,7 @@ ALTER TABLE `akunsiswa`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
