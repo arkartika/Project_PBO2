@@ -222,6 +222,16 @@ class MyFrame3 ( wx.Frame ):
 		self.m_choice3.SetSelection( 1 )
 		gSizer2.Add( self.m_choice3, 0, wx.ALL, 5 )
 
+		self.m_staticText28 = wx.StaticText( self, wx.ID_ANY, u"Jarak Rumah - Sekolah", wx.DefaultPosition, wx.DefaultSize, 0 )
+		self.m_staticText28.Wrap( -1 )
+
+		gSizer2.Add( self.m_staticText28, 0, wx.ALL, 5 )
+
+		m_choice71Choices = [ u"<1 km", u"1 km - 5km", u"> 5km" ]
+		self.m_choice71 = wx.Choice( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, m_choice71Choices, 0 )
+		self.m_choice71.SetSelection( 0 )
+		gSizer2.Add( self.m_choice71, 0, wx.ALL, 5 )
+
 		self.m_staticText15 = wx.StaticText( self, wx.ID_ANY, u"Alamat", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText15.Wrap( -1 )
 
@@ -401,7 +411,7 @@ class MyFrame4 ( wx.Frame ):
 		self.m_grid1 = wx.grid.Grid( self, wx.ID_ANY, wx.DefaultPosition, wx.DefaultSize, 0 )
 
 		# Grid
-		self.m_grid1.CreateGrid( 10, 15 )
+		self.m_grid1.CreateGrid( 10, 16 )
 		self.m_grid1.EnableEditing( True )
 		self.m_grid1.EnableGridLines( True )
 		self.m_grid1.EnableDragGridSize( False )
@@ -417,15 +427,16 @@ class MyFrame4 ( wx.Frame ):
 		self.m_grid1.SetColLabelValue( 3, u"No. Telpon" )
 		self.m_grid1.SetColLabelValue( 4, u"Agama" )
 		self.m_grid1.SetColLabelValue( 5, u"Jenis Kelamin" )
-		self.m_grid1.SetColLabelValue( 6, u"Alamat" )
-		self.m_grid1.SetColLabelValue( 7, u"Nama Ayah" )
-		self.m_grid1.SetColLabelValue( 8, u"Pekerjaan Ayah" )
-		self.m_grid1.SetColLabelValue( 9, u"Penghasilan Ayah" )
-		self.m_grid1.SetColLabelValue( 10, u"Nama Ibu" )
-		self.m_grid1.SetColLabelValue( 11, u"Pekerjaan Ibu" )
-		self.m_grid1.SetColLabelValue( 12, u"Penghasilan Ibu" )
-		self.m_grid1.SetColLabelValue( 13, u"No. Telpon Orang Tua" )
-		self.m_grid1.SetColLabelValue( 14, u"Alamat Orang Tua" )
+		self.m_grid1.SetColLabelValue( 6, u"Jarak Rumah - Sekolah" )
+		self.m_grid1.SetColLabelValue( 7, u"Alamat" )
+		self.m_grid1.SetColLabelValue( 8, u"Nama Ayah" )
+		self.m_grid1.SetColLabelValue( 9, u"Pekerjaan Ayah" )
+		self.m_grid1.SetColLabelValue( 10, u"Penghasilan Ayah" )
+		self.m_grid1.SetColLabelValue( 11, u"Nama Ibu" )
+		self.m_grid1.SetColLabelValue( 12, u"Pekerjaan Ibu" )
+		self.m_grid1.SetColLabelValue( 13, u"Penghasilan Ibu" )
+		self.m_grid1.SetColLabelValue( 14, u"No. Telpon Orang Tua" )
+		self.m_grid1.SetColLabelValue( 15, u"Alamat Orang Tua" )
 		self.m_grid1.SetColLabelAlignment( wx.ALIGN_CENTER, wx.ALIGN_CENTER )
 
 		# Rows
