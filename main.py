@@ -63,6 +63,15 @@ class Frame3 (DataManager, noname.MyFrame3):
         self.data = data
         self.m_textCtrl3.write(self.data[0][3])
         self.m_textCtrl111.write(self.data[0][4])
+        self.m_textCtrl6.write(self.data[0][5])
+        self.m_textCtrl7.write(self.data[0][6])
+        self.m_textCtrl8.write(self.data[0][9])
+        self.m_textCtrl9.write(self.data[0][10])
+        self.m_textCtrl11.write(self.data[0][13])
+        self.m_textCtrl12.write(self.data[0][16])
+        self.m_textCtrl13.write(self.data[0][17])
+
+
         if self.data [0][7] == "ISLAM":
             self.m_choice2.SetSelection(0)
         elif self.data [0][7] == "BUDHA":
@@ -75,29 +84,34 @@ class Frame3 (DataManager, noname.MyFrame3):
             self.m_choice2.SetSelection(4)
         elif self.data [0][7] == "KATOLIK":
             self.m_choice2.SetSelection(5)
-        elif self.data [0][8] == "PRIA":
+
+        if self.data [0][8] == "PRIA":
             self.m_choice3.SetSelection(0)
         elif self.data [0][8] == "WANITA":
             self.m_choice3.SetSelection(1)
-        elif self.data [0][11] == "PNS":
+
+        if self.data [0][11] == "PNS":
             self.m_choice4.SetSelection(0)
         elif self.data [0][11] == "SWASTA":
             self.m_choice4.SetSelection(1)
         elif self.data [0][11] == "LAINNYA":
             self.m_choice4.SetSelection(2)
-        elif self.data [0][12] == "<1.000.000":
+
+        if self.data [0][12] == "<1.000.000":
             self.m_choice5.SetSelection(0)
         elif self.data [0][12] == "1.500.000 - 3.000.000":
             self.m_choice5.SetSelection(1)
         elif self.data [0][12] == ">3.000.000":
             self.m_choice5.SetSelection(2)
-        elif self.data [0][14] == "PNS":
+
+        if self.data [0][14] == "PNS":
             self.m_choice6.SetSelection(0)
         elif self.data [0][14] == "SWASTA":
             self.m_choice6.SetSelection(1)
         elif self.data [0][14] == "LAINNYA":
             self.m_choice6.SetSelection(2)
-        elif self.data [0][15] == "<1.000.000":
+
+        if self.data [0][15] == "<1.000.000":
             self.m_choice7.SetSelection(0)
         elif self.data [0][15] == "1.500.000 - 3.000.000":
             self.m_choice7.SetSelection(1)
@@ -165,13 +179,14 @@ class Frame4 (DataManager, noname.MyFrame4):
     def btn_Akun(self, event):
         event = Dialog3(None)
         event.Show()
-        self.Destroy()
+        # self.Destroy()
         self.DM.conn.close()
 
 class Dialog3 (DataManager, noname.MyDialog3):
     def __init__(self, parent):
         noname.MyDialog3.__init__(self,parent)
         self.DM = DataManager()
+        
 
     def btn_daftar(self, event):
         Username = self.m_textCtrl46.GetValue()
