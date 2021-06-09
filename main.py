@@ -40,7 +40,6 @@ class Dialog1 (DataManager, noname.MyDialog1):
         self.query1 = "SELECT * FROM admin WHERE username = '{}' and password = '{}'".format(username, password)
         hasil1 = self.DM.Jalankan(self.query1, returnData = True)
         
-
         if hasil is not None and len(hasil) > 0:
             event = Frame3(None, hasil)
             event.Show()
@@ -54,7 +53,6 @@ class Dialog1 (DataManager, noname.MyDialog1):
         else:
             wx.MessageBox('Username atau Password yang anda masukkan salah', 'Terjadi Kesalahan')
 
-
 class Frame3 (DataManager, noname.MyFrame3):
     def __init__(self, parent, data):
         noname.MyFrame3.__init__(self, parent)
@@ -65,12 +63,11 @@ class Frame3 (DataManager, noname.MyFrame3):
         self.m_textCtrl111.write(self.data[0][4])
         self.m_textCtrl6.write(self.data[0][5])
         self.m_textCtrl7.write(self.data[0][6])
-        self.m_textCtrl8.write(self.data[0][9])
-        self.m_textCtrl9.write(self.data[0][10])
-        self.m_textCtrl11.write(self.data[0][13])
-        self.m_textCtrl12.write(self.data[0][16])
-        self.m_textCtrl13.write(self.data[0][17])
-
+        self.m_textCtrl8.write(self.data[0][10])
+        self.m_textCtrl9.write(self.data[0][11])
+        self.m_textCtrl11.write(self.data[0][14])
+        self.m_textCtrl12.write(self.data[0][17])
+        self.m_textCtrl13.write(self.data[0][18])
 
         if self.data [0][7] == "ISLAM":
             self.m_choice2.SetSelection(0)
@@ -89,6 +86,13 @@ class Frame3 (DataManager, noname.MyFrame3):
             self.m_choice3.SetSelection(0)
         elif self.data [0][8] == "WANITA":
             self.m_choice3.SetSelection(1)
+        
+        if self.data [0][9] == "< 1 km":
+            self.m_choice71.SetSelection(0)
+        elif self.data [0][9] == "1 km - 5 km":
+            self.m_choice71.SetSelection(1)
+        elif self.data [0][9] == "> 5 km":
+            self.m_choice71.SetSelection(2)
 
         if self.data [0][11] == "PNS":
             self.m_choice4.SetSelection(0)
@@ -118,9 +122,6 @@ class Frame3 (DataManager, noname.MyFrame3):
         elif self.data [0][15] == ">3.000.000":
             self.m_choice7.SetSelection(2)
 
-
-      
-
     def SubmitFrame3( self, event ):
         Nama = self.m_textCtrl3.GetValue()
         Tgl = self.m_textCtrl111.GetValue()
@@ -128,6 +129,7 @@ class Frame3 (DataManager, noname.MyFrame3):
         Notelp = self.m_textCtrl7.GetValue()
         Agama = self.m_choice2.GetString(self.m_choice2.GetSelection())
         Jenis = self.m_choice3.GetString(self.m_choice3.GetSelection())
+        Jarak = self.m_choice71.GetString(self.m_choice71.GetSelection())
         Alamat = self.m_textCtrl8.GetValue()
         Ayah = self.m_textCtrl9.GetValue()
         PekerjaanAyah = self.m_choice4.GetString(self.m_choice4.GetSelection())
@@ -138,11 +140,10 @@ class Frame3 (DataManager, noname.MyFrame3):
         NoTelpOrtu = self.m_textCtrl12.GetValue()
         AlamatOrtu = self.m_textCtrl13.GetValue()
 
-
-        if Nama != "" and Tgl != "" and NIK != "" and Notelp != "" and Agama != "" and Jenis != "" and Alamat != "" and Ayah != "" and PekerjaanAyah != "" and PenghasilanAyah != "" and Ibu != "" and PekerjaanIbu != "" and PenghasilanIbu != "" and NoTelpOrtu != "" and AlamatOrtu != "":
+        if Nama != "" and Tgl != "" and NIK != "" and Notelp != "" and Agama != "" and Jenis != "" and Jarak != "" and Alamat != "" and Ayah != "" and PekerjaanAyah != "" and PenghasilanAyah != "" and Ibu != "" and PekerjaanIbu != "" and PenghasilanIbu != "" and NoTelpOrtu != "" and AlamatOrtu != "":
             print(Nama)
-            self.query = "update siswa set Nama = %s, Tgl = %s, NIK = %s, Notelp = %s, Agama = %s, Jenis = %s, Alamat = %s, Ayah = %s, PekerjaanAyah = %s, PenghasilanAyah = %s, Ibu = %s, PekerjaanIbu = %s, PenghasilanIbu =%s, NoTelpOrtu = %s, AlamatOrtu = %s WHERE id = %s"
-            self.value = (Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu, self.data[0][0])
+            self.query = "update siswa set Nama = %s, Tgl = %s, NIK = %s, Notelp = %s, Agama = %s, Jenis = %s, Jarak = %s, Alamat = %s, Ayah = %s, PekerjaanAyah = %s, PenghasilanAyah = %s, Ibu = %s, PekerjaanIbu = %s, PenghasilanIbu =%s, NoTelpOrtu = %s, AlamatOrtu = %s WHERE id = %s"
+            self.value = (Nama, Tgl, NIK, Notelp, Agama, Jenis, Jarak, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu, self.data[0][0])
             self.DM.cursor.execute(self.query, self.value)
             self.DM.conn.commit()
             wx.MessageBox('Data Berhasil', 'Selamat data berhasil disimpan', wx.OK | wx.ICON_INFORMATION)
@@ -150,10 +151,8 @@ class Frame3 (DataManager, noname.MyFrame3):
             event.Show()
             self.Destroy()
             self.DM.conn.close()
-
         else:
             wx.MessageBox('Data tidak boleh kosong', 'Terjadi Kesalahan')
-
 
 class Frame4 (DataManager, noname.MyFrame4):
     def __init__(self, parent):
@@ -187,11 +186,9 @@ class Dialog3 (DataManager, noname.MyDialog3):
         noname.MyDialog3.__init__(self,parent)
         self.DM = DataManager()
         
-
     def btn_daftar(self, event):
         Username = self.m_textCtrl46.GetValue()
         Password = self.m_textCtrl47.GetValue()
-
 
         if Username != "" and Password != "":
             self.query = "INSERT INTO siswa (Username, Password) VALUES (%s , %s)"
@@ -203,19 +200,9 @@ class Dialog3 (DataManager, noname.MyDialog3):
             event.Show()
             self.Destroy()
             self.DM.conn.close()
-        
         else:
             wx.MessageBox('Data tidak boleh kosong', 'Terjadi Kesalahan')
             
-
-
-
-
-
-
-
-
-
 run = wx.App()
 frame = Frame1(parent=None)
 frame.Show()
