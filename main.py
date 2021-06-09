@@ -35,13 +35,14 @@ class Dialog1 (DataManager, noname.MyDialog1):
         username = self.m_textCtrl1.GetValue()
         password = self.m_textCtrl2.GetValue()
 
-        self.query = "SELECT * FROM akunsiswa WHERE username = '{}' and password = '{}'".format(username, password)
+        self.query = "SELECT * FROM siswa WHERE username = '{}' and password = '{}'".format(username, password)
         hasil = self.DM.Jalankan(self.query, returnData = True)
         self.query1 = "SELECT * FROM admin WHERE username = '{}' and password = '{}'".format(username, password)
         hasil1 = self.DM.Jalankan(self.query1, returnData = True)
+        
 
         if hasil is not None and len(hasil) > 0:
-            event = Frame3(None)
+            event = Frame3(None, hasil)
             event.Show()
             self.Destroy()
             self.DM.conn.close()
@@ -55,10 +56,57 @@ class Dialog1 (DataManager, noname.MyDialog1):
 
 
 class Frame3 (DataManager, noname.MyFrame3):
-    def __init__(self, parent):
+    def __init__(self, parent, data):
         noname.MyFrame3.__init__(self, parent)
         self.DM = DataManager()
         self.parent = parent
+        self.data = data
+        self.m_textCtrl3.write(self.data[0][3])
+        self.m_textCtrl111.write(self.data[0][4])
+        if self.data [0][7] == "ISLAM":
+            self.m_choice2.SetSelection(0)
+        elif self.data [0][7] == "BUDHA":
+            self.m_choice2.SetSelection(1)
+        elif self.data [0][7] == "KONGHUCHU":
+            self.m_choice2.SetSelection(2)
+        elif self.data [0][7] == "HINDU":
+            self.m_choice2.SetSelection(3)
+        elif self.data [0][7] == "KRISTEN":
+            self.m_choice2.SetSelection(4)
+        elif self.data [0][7] == "KATOLIK":
+            self.m_choice2.SetSelection(5)
+        elif self.data [0][8] == "PRIA":
+            self.m_choice3.SetSelection(0)
+        elif self.data [0][8] == "WANITA":
+            self.m_choice3.SetSelection(1)
+        elif self.data [0][11] == "PNS":
+            self.m_choice4.SetSelection(0)
+        elif self.data [0][11] == "SWASTA":
+            self.m_choice4.SetSelection(1)
+        elif self.data [0][11] == "LAINNYA":
+            self.m_choice4.SetSelection(2)
+        elif self.data [0][12] == "<1.000.000":
+            self.m_choice5.SetSelection(0)
+        elif self.data [0][12] == "1.500.000 - 3.000.000":
+            self.m_choice5.SetSelection(1)
+        elif self.data [0][12] == ">3.000.000":
+            self.m_choice5.SetSelection(2)
+        elif self.data [0][14] == "PNS":
+            self.m_choice6.SetSelection(0)
+        elif self.data [0][14] == "SWASTA":
+            self.m_choice6.SetSelection(1)
+        elif self.data [0][14] == "LAINNYA":
+            self.m_choice6.SetSelection(2)
+        elif self.data [0][15] == "<1.000.000":
+            self.m_choice7.SetSelection(0)
+        elif self.data [0][15] == "1.500.000 - 3.000.000":
+            self.m_choice7.SetSelection(1)
+        elif self.data [0][15] == ">3.000.000":
+            self.m_choice7.SetSelection(2)
+
+
+      
+
     def SubmitFrame3( self, event ):
         Nama = self.m_textCtrl3.GetValue()
         Tgl = self.m_textCtrl111.GetValue()
@@ -79,8 +127,8 @@ class Frame3 (DataManager, noname.MyFrame3):
 
         if Nama != "" and Tgl != "" and NIK != "" and Notelp != "" and Agama != "" and Jenis != "" and Alamat != "" and Ayah != "" and PekerjaanAyah != "" and PenghasilanAyah != "" and Ibu != "" and PekerjaanIbu != "" and PenghasilanIbu != "" and NoTelpOrtu != "" and AlamatOrtu != "":
             print(Nama)
-            self.query = "INSERT INTO siswa (Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu) VALUES ( %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);"
-            self.value = (Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu)
+            self.query = "update siswa set Nama = %s, Tgl = %s, NIK = %s, Notelp = %s, Agama = %s, Jenis = %s, Alamat = %s, Ayah = %s, PekerjaanAyah = %s, PenghasilanAyah = %s, Ibu = %s, PekerjaanIbu = %s, PenghasilanIbu =%s, NoTelpOrtu = %s, AlamatOrtu = %s WHERE id = %s"
+            self.value = (Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu, self.data[0][0])
             self.DM.cursor.execute(self.query, self.value)
             self.DM.conn.commit()
             wx.MessageBox('Data Berhasil', 'Selamat data berhasil disimpan', wx.OK | wx.ICON_INFORMATION)
@@ -92,15 +140,6 @@ class Frame3 (DataManager, noname.MyFrame3):
         else:
             wx.MessageBox('Data tidak boleh kosong', 'Terjadi Kesalahan')
 
-# class Dialog6 (DataManager, noname.MyDialog6):
-#     def __init__(self, parent):
-#         noname.MyDialog6.__init__(self, parent)
-#         self.DM = DataManager()
-#     def btn_logoutD6( self, event ):
-#         self.DM.conn.close()
-#         event = Frame1(None)
-#         event.Show()
-#         self.Destroy()
 
 class Frame4 (DataManager, noname.MyFrame4):
     def __init__(self, parent):
@@ -122,6 +161,42 @@ class Frame4 (DataManager, noname.MyFrame4):
         event = Frame1(None)
         event.Show()
         self.Destroy()
+    
+    def btn_Akun(self, event):
+        event = Dialog3(None)
+        event.Show()
+        self.Destroy()
+        self.DM.conn.close()
+
+class Dialog3 (DataManager, noname.MyDialog3):
+    def __init__(self, parent):
+        noname.MyDialog3.__init__(self,parent)
+        self.DM = DataManager()
+
+    def btn_daftar(self, event):
+        Username = self.m_textCtrl46.GetValue()
+        Password = self.m_textCtrl47.GetValue()
+
+
+        if Username != "" and Password != "":
+            self.query = "INSERT INTO siswa (Username, Password) VALUES (%s , %s)"
+            self.value = (Username, Password)
+            self.DM.cursor.execute(self.query, self.value)
+            self.DM.conn.commit()
+            wx.MessageBox('Data Berhasil', 'Selamat data berhasil disimpan', wx.OK | wx.ICON_INFORMATION)
+            event = Frame1(None)
+            event.Show()
+            self.Destroy()
+            self.DM.conn.close()
+        
+        else:
+            wx.MessageBox('Data tidak boleh kosong', 'Terjadi Kesalahan')
+            
+
+
+
+
+
 
 
 
