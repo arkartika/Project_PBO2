@@ -500,7 +500,7 @@ class MyDialog3 ( wx.Dialog ):
 		bSizer16.Add( self.m_staticText102, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.m_textCtrl46 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer16.Add( self.m_textCtrl46, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
+		bSizer16.Add( self.m_textCtrl46, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
 		self.m_staticText104 = wx.StaticText( self, wx.ID_ANY, u"Password", wx.DefaultPosition, wx.DefaultSize, 0 )
 		self.m_staticText104.Wrap( -1 )
@@ -508,7 +508,7 @@ class MyDialog3 ( wx.Dialog ):
 		bSizer16.Add( self.m_staticText104, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL, 5 )
 
 		self.m_textCtrl47 = wx.TextCtrl( self, wx.ID_ANY, wx.EmptyString, wx.DefaultPosition, wx.DefaultSize, 0 )
-		bSizer16.Add( self.m_textCtrl47, 0, wx.ALL|wx.ALIGN_CENTER_HORIZONTAL|wx.EXPAND, 5 )
+		bSizer16.Add( self.m_textCtrl47, 0, wx.ALIGN_CENTER_HORIZONTAL|wx.ALL, 5 )
 
 
 		bSizer16.Add( ( 0, 0), 0, wx.EXPAND, 5 )
