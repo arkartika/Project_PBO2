@@ -1,4 +1,4 @@
-from wx.core import Frame
+#from wx.core import Frame
 import noname
 import wx
 import mysql.connector
@@ -94,32 +94,32 @@ class Frame3 (DataManager, noname.MyFrame3):
         elif self.data [0][9] == "> 5 km":
             self.m_choice71.SetSelection(2)
 
-        if self.data [0][11] == "PNS":
+        if self.data [0][12] == "PNS":
             self.m_choice4.SetSelection(0)
-        elif self.data [0][11] == "SWASTA":
+        elif self.data [0][12] == "SWASTA":
             self.m_choice4.SetSelection(1)
-        elif self.data [0][11] == "LAINNYA":
+        elif self.data [0][12] == "LAINNYA":
             self.m_choice4.SetSelection(2)
 
-        if self.data [0][12] == "<1.000.000":
+        if self.data [0][13] == "<1.000.000":
             self.m_choice5.SetSelection(0)
-        elif self.data [0][12] == "1.500.000 - 3.000.000":
+        elif self.data [0][13] == "1.500.000 - 3.000.000":
             self.m_choice5.SetSelection(1)
-        elif self.data [0][12] == ">3.000.000":
+        elif self.data [0][13] == ">3.000.000":
             self.m_choice5.SetSelection(2)
 
-        if self.data [0][14] == "PNS":
+        if self.data [0][15] == "PNS":
             self.m_choice6.SetSelection(0)
-        elif self.data [0][14] == "SWASTA":
+        elif self.data [0][15] == "SWASTA":
             self.m_choice6.SetSelection(1)
-        elif self.data [0][14] == "LAINNYA":
+        elif self.data [0][15] == "LAINNYA":
             self.m_choice6.SetSelection(2)
 
-        if self.data [0][15] == "<1.000.000":
+        if self.data [0][16] == "<1.000.000":
             self.m_choice7.SetSelection(0)
-        elif self.data [0][15] == "1.500.000 - 3.000.000":
+        elif self.data [0][16] == "1.500.000 - 3.000.000":
             self.m_choice7.SetSelection(1)
-        elif self.data [0][15] == ">3.000.000":
+        elif self.data [0][16] == ">3.000.000":
             self.m_choice7.SetSelection(2)
 
     def SubmitFrame3( self, event ):
@@ -161,9 +161,9 @@ class Frame4 (DataManager, noname.MyFrame4):
         self.tampilData()
 
     def tampilData(self):
-        self.query = 'SELECT Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu FROM siswa'
+        self.query = 'SELECT Nama, Tgl, NIK, Notelp, Agama, Jenis, Jarak, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu FROM siswa'
         hasil = self.DM.Jalankan(self.query, returnData=True)
-        for a in range (15) :
+        for a in range (16) :
             b = 0
             for row in hasil:
                 self.m_grid1.SetCellValue(b, a, str(row[a]))
