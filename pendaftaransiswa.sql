@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jun 2021 pada 14.53
+-- Waktu pembuatan: 09 Jun 2021 pada 16.04
 -- Versi server: 10.4.17-MariaDB
--- Versi PHP: 8.0.0
+-- Versi PHP: 7.4.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -76,6 +76,7 @@ CREATE TABLE `siswa` (
   `Notelp` varchar(50) NOT NULL,
   `Agama` varchar(50) NOT NULL,
   `Jenis` varchar(50) NOT NULL,
+  `Jarak` varchar(20) NOT NULL,
   `Alamat` varchar(50) NOT NULL,
   `Ayah` varchar(50) NOT NULL,
   `PekerjaanAyah` varchar(50) NOT NULL,
@@ -91,9 +92,10 @@ CREATE TABLE `siswa` (
 -- Dumping data untuk tabel `siswa`
 --
 
-INSERT INTO `siswa` (`id`, `Username`, `Password`, `Nama`, `Tgl`, `NIK`, `Notelp`, `Agama`, `Jenis`, `Alamat`, `Ayah`, `PekerjaanAyah`, `PenghasilanAyah`, `Ibu`, `PekerjaanIbu`, `PenghasilanIbu`, `NoTelpOrtu`, `AlamatOrtu`) VALUES
-(1, 'rio123', 'rio12', 'Rio', '25-1-2000', '123456789', '0987654321', 'Islam', 'Pria', 'Jl.Raya 1', 'Usep', 'PNS', '1.000.000', 'Lia', 'PNS', '1.000.000', '0987654321', 'Jl.Raya 1'),
-(23, 'Sania00', 'San00', 'cehdc', 'nnncnd', 'odcodc', 'kncoodweocb', 'BUDHA', 'PRIA', 'cnopdhccdhd', 'pjcodoc', 'SWASTA', '> 3.000.000', 'fjowjhfer', 'PNS', '1.500.000 - 3.000.000', 'fjog0wh', 'oehfpowe');
+INSERT INTO `siswa` (`id`, `Username`, `Password`, `Nama`, `Tgl`, `NIK`, `Notelp`, `Agama`, `Jenis`, `Jarak`, `Alamat`, `Ayah`, `PekerjaanAyah`, `PenghasilanAyah`, `Ibu`, `PekerjaanIbu`, `PenghasilanIbu`, `NoTelpOrtu`, `AlamatOrtu`) VALUES
+(1, 'rio123', 'rio12', 'Rio', '25-1-2000', '123456789', '0987654321', 'Islam', 'Pria', '', 'Jl.Raya 1', 'Usep', 'PNS', '1.000.000', 'Lia', 'PNS', '1.000.000', '0987654321', 'Jl.Raya 1'),
+(23, 'Sania00', 'San00', 'cehdc', 'nnncnd', 'odcodc', 'kncoodweocb', 'BUDHA', 'PRIA', '', 'cnopdhccdhd', 'pjcodoc', 'SWASTA', '> 3.000.000', 'fjowjhfer', 'PNS', '1.500.000 - 3.000.000', 'fjog0wh', 'oehfpowe'),
+(24, 'robi123', 'robi123', 'Robi', '21-08-1945', '123456789', '09813761831', 'ISLAM', 'PRIA', '', 'Jl.Baya raung 2', 'KEPO', 'LAINNYA', '<1.000.000', 'Sri', 'SWASTA', '> 3.000.000', '2145323252', 'Jl.Baya raung 2');
 
 --
 -- Indexes for dumped tables
@@ -137,7 +139,7 @@ ALTER TABLE `akunsiswa`
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
 ALTER TABLE `siswa`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
