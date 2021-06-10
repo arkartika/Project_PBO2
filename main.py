@@ -161,9 +161,9 @@ class Frame4 (DataManager, noname.MyFrame4):
         self.tampilData()
 
     def tampilData(self):
-        self.query = 'SELECT Nama, Tgl, NIK, Notelp, Agama, Jenis, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu FROM siswa'
+        self.query = 'SELECT Nama, Tgl, NIK, Notelp, Agama, Jenis, Jarak, Alamat, Ayah, PekerjaanAyah, PenghasilanAyah, Ibu, PekerjaanIbu, PenghasilanIbu, NoTelpOrtu, AlamatOrtu FROM siswa'
         hasil = self.DM.Jalankan(self.query, returnData=True)
-        for a in range (15) :
+        for a in range (16) :
             b = 0
             for row in hasil:
                 self.m_grid1.SetCellValue(b, a, str(row[a]))
